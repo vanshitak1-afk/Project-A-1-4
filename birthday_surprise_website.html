@@ -95,7 +95,13 @@ function toSection2(){spotlight.style.display="none";section2.style.display="fle
 function toSection4(){section2.style.display="none";section4.style.display="flex";createGifts();}
 function toSection5(){section4.style.display="none";section5.style.display="flex";}
 
-function createRow(id){let r=document.getElementById("row"+id);if(r.children.length===0){for(let i=0;i<5;i++){let d=document.createElement("div");d.className="polaroid";r.appendChild(d);}}}
+function createRow(id){let r=document.getElementById("row"+id);if(r.children.length===0){for(let i=0;i<5;i++){let d=document.createElement("div");d.className="polaroid";let image = document.createElement("image");
+image.src = "imgage" + ( (id-1)*5 + i + 1 ) + ".jpg";
+image.style.width = "100%";
+image.style.height = "100%";
+image.style.objectFit = "cover";
+
+d.appendChild(image);}}}
 
 const startDate = new Date("2026-03-22T23:59:00");
 
